@@ -7,7 +7,7 @@ const generateAccessToken = ( user : IUser ) => {
     return jwt.sign(
         { userId: user.id },
         config.jwtAccess,
-        { expiresIn: '10m' }
+        { expiresIn: '1h' }
     )
 }
 
@@ -24,7 +24,7 @@ const generateRefreshToken = ( user : IUser ) => {
 export const decodeAccessToken = ( token : string ) => {
     const config = useRuntimeConfig()
 
-    try {
+    try {        
         return jwt.verify(token, config.jwtAccess)
     } catch (error) {
         return null

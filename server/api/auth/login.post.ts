@@ -37,7 +37,7 @@ export default defineEventHandler( async ( event ) => {
     const { accessToken, refreshToken } = generateTokens( user as IUser )
 
     // Add cookie
-    sendRefreshToken(event, refreshToken)
+    sendRefreshToken(event, accessToken)
 
     return {
         access: accessToken,
