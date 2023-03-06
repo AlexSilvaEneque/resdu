@@ -5,7 +5,7 @@
 <template>
     <div class="flex flex-row border-2 h-14">
         <div class="basis-1/4 flex justify-center">
-            <img src="favicon.ico" alt="logo resdu">
+            <!-- <img src="favicon.ico" alt="logo resdu"> -->
         </div>
         <div class="basis-1/2 flex items-center py-2">
             <input type="text"
