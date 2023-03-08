@@ -6,6 +6,6 @@
 
 <template>
     <div>
-        
+        page index - question
     </div>
 </template>

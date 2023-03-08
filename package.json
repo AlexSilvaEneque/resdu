@@ -17,6 +17,9 @@
     "prisma": "^4.10.1"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.3.0",
+    "@fortawesome/free-solid-svg-icons": "^6.3.0",
+    "@fortawesome/vue-fontawesome": "^3.0.3",
     "@prisma/client": "^4.10.1",
     "bcrypt": "^5.1.0",
     "jsonwebtoken": "^9.0.0"

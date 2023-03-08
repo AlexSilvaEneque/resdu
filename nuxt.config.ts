@@ -8,5 +8,19 @@ export default defineNuxtConfig({
 
     modules: [
         '@nuxtjs/tailwindcss'
+    ],
+
+    app: {
+        head: {
+            title: 'Resdu',
+            
+            link: [
+                { rel: 'icon', type: 'image/png', href: '/img/icon.png' }
+            ]
+        }
+    },
+
+    css: [
+        '@fortawesome/fontawesome-svg-core/styles.css'
     ]
 })
