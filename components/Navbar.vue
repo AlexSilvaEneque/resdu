@@ -9,38 +9,7 @@
     const options : Ref<Array<IOption>> = ref([])
     const widthScreen : Ref<number> = ref(0)
 
-    options.value = [
-        {
-            name: 'Inicio',
-            icon: 'fa-house',
-            path: '/'
-        },
-        {
-            name: 'Preguntas',
-            icon: 'fa-question',
-            path: '/question'
-        },
-        {
-            name: 'Categorias',
-            icon: 'fa-list',
-            path: '/category'
-        },
-        {
-            name: 'Usuarios',
-            icon: 'fa-users',
-            path: '/user'
-        },
-        {
-            name: 'Iniciar sesion',
-            icon: 'fa-users',
-            path: '/login'
-        },
-        {
-            name: 'Registrarse',
-            icon: 'fa-users',
-            path: '/register'
-        }
-    ]
+    
 
     const openMenu = () => {
         isOpen.value = !isOpen.value
@@ -55,6 +24,39 @@
 
     onMounted(() => {
         window.addEventListener('resize', checkScreen)
+
+        options.value = [
+            {
+                name: 'Inicio',
+                icon: 'fa-house',
+                path: '/'
+            },
+            {
+                name: 'Preguntas',
+                icon: 'fa-question',
+                path: '/question'
+            },
+            {
+                name: 'Categorias',
+                icon: 'fa-list',
+                path: '/category'
+            },
+            {
+                name: 'Usuarios',
+                icon: 'fa-users',
+                path: '/user'
+            },
+            {
+                name: 'Iniciar sesion',
+                icon: 'fa-users',
+                path: '/login'
+            },
+            {
+                name: 'Registrarse',
+                icon: 'fa-users',
+                path: '/register'
+            }
+        ]
     })
 
 </script>
@@ -100,10 +102,11 @@
     </div>
 
     <div
-        :class="[ isOpen ? 'w-full' : 'hidden' ]" 
-        class="border-b-2 rounded-b-xl min-h-fit overflow-hidden duration-200">
+        :class="[ isOpen ? 'h-fit w-full fixed z-50 rounded-b-xl bg-white shadow-md' : 'h-0' ]" 
+        class="overflow-hidden duration-200 ease-in-out"
+        @click.away="isOpen = false">
         <ul>
-            <li v-for="item in options"
+            <li v-for="(item, index) in options" :key="index"
                 class="w-full py-2.5 px-3 text-gray-700 font-semibold">
                 <NuxtLink :to="item.path">
                     <font-awesome-icon :icon="['fa-solid', item.icon]" 
